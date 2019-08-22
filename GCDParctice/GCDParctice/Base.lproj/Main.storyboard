@@ -64,6 +64,22 @@
                                     <action selector="clikcSemaphore" destination="BYZ-38-t0r" eventType="touchUpInside" id="93N-Of-ajd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="md3-ol-nXC">
+                                <rect key="frame" x="19" y="839" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="clean"/>
+                                <connections>
+                                    <action selector="clean" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ny-Tx-xjF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2V-Qp-elg">
+                                <rect key="frame" x="173" y="754" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="s2"/>
+                                <connections>
+                                    <action selector="clikcSemaphoreTwo" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lx2-FR-OnF"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssm-mQ-brZ">
                                 <rect key="frame" x="16" y="421" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>

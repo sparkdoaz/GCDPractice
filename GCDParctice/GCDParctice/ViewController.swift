@@ -12,7 +12,11 @@ class ViewController: UIViewController {
     
     let group = DispatchGroup()
     
-    let queue = DispatchQueue(label: "hihi")
+    var one = ""
+    var tw0 = ""
+    var three = ""
+    
+//    let queue = DispatchQueue(label: "sss", qos: .default, attributes: .concurrent)
     
     let urlOne = URL(string:"https://data.taipei/opendata/datalist/apiAccess?scope=resourceAquire&rid=5012e8ba-5ace-4821-8482-ee07c147fd0a&limit=1&offset=0" )
     
@@ -59,8 +63,11 @@ class ViewController: UIViewController {
             
             let datatwo = kkk?.result.results[0]
             
-            self.labelOne.text = datatwo?.road
+            DispatchQueue.main.async {
+                self.labelOne.text = datatwo?.road
+            }
             
+            self.one = datatwo!.road
             }.resume()
     }
     
@@ -74,8 +81,11 @@ class ViewController: UIViewController {
             
             let datatwo = kkk?.result.results[0]
             
-            self.labelTwo.text = datatwo?.road
+            DispatchQueue.main.async {
+                self.labelTwo.text = datatwo?.road
+            }
             
+            self.tw0 = datatwo!.road
             }.resume()
     }
     
@@ -85,15 +95,18 @@ class ViewController: UIViewController {
             URLSession.shared.dataTask(with: self.urlThree!) { [weak self](data, _, error) in
                 guard let data = data , let utf8Text = String(data: data, encoding: .utf8) else { return}
                 
+            let decoder = JSONDecoder()
+            let kkk = try? decoder.decode(DataResult.self, from: data)
+            
+            let datatwo = kkk?.result.results[0]
                 
-                let decoder = JSONDecoder()
-                let kkk = try? decoder.decode(DataResult.self, from: data)
-                
-                let datatwo = kkk?.result.results[0]
-                
+            DispatchQueue.main.async {
                 self?.labelThree.text = datatwo?.road
+            }
+            
+            self?.three = datatwo!.road
                 
-                }.resume()
+            }.resume()
         
         
         
@@ -105,13 +118,50 @@ class ViewController: UIViewController {
         
         //weak self add before parameter
         
-        queue.async {
-            
-            
-            
+        DispatchQueue.global().async {
+            print("one wait")
+            self.semaphore.wait()
+            print("one wait finished")
+            self.semaOne()
+//            sleep(1)
+            self.semaphore.signal()
+            print("one domne")
             
         }
         
+        DispatchQueue.global().async {
+            print("two wait")
+            self.semaphore.wait()
+            print("two wait finished")
+            self.semaTwo()
+//            sleep(1)
+            self.semaphore.signal()
+            print("two domne")
+            
+        }
+        
+        DispatchQueue.global().async {
+            print("three wait")
+            self.semaphore.wait()
+            print("three wait finished")
+            self.semaThree()
+//            sleep(1)
+            self.semaphore.signal()
+            print("three domne")
+            
+        }
+        
+        //效果跟下面差別是
+        
+    }
+    
+    @IBAction func clikcSemaphoreTwo() {
+        
+        self.semaOne()
+        self.semaTwo()
+        semaThree()
+        
+    
     }
     
     @IBAction func clikc() {
@@ -185,6 +235,16 @@ class ViewController: UIViewController {
             self?.labelTwoSpeed.text = self!.save[1].sppedLimit
             self?.labelThreeSpeed.text = self!.save[2].sppedLimit
         }
+    }
+    
+    @IBAction func clean() {
+        self.labelOne.text = "label"
+        self.labelTwo.text = "label"
+        self.labelThree.text = "label"
+        self.labelOneSpeed.text = "label"
+        self.labelTwoSpeed.text = "label"
+        self.labelThreeSpeed.text = "label"
+        self.save = []
     }
 
 
