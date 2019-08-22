@@ -12,6 +12,8 @@
 		FC8EE5E3230E512B00A8B65D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC8EE5E1230E512B00A8B65D /* Main.storyboard */; };
 		FC8EE5E5230E512C00A8B65D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC8EE5E4230E512C00A8B65D /* Assets.xcassets */; };
 		FC8EE5E8230E512C00A8B65D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC8EE5E6230E512C00A8B65D /* LaunchScreen.storyboard */; };
+		FC8EE5F0230E63E100A8B65D /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8EE5EF230E63E100A8B65D /* Request.swift */; };
+		FC8EE5F2230E6DB100A8B65D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8EE5F1230E6DB100A8B65D /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		FC8EE5E4230E512C00A8B65D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC8EE5E7230E512C00A8B65D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC8EE5E9230E512C00A8B65D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC8EE5EF230E63E100A8B65D /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		FC8EE5F1230E6DB100A8B65D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				FC8EE5E4230E512C00A8B65D /* Assets.xcassets */,
 				FC8EE5E6230E512C00A8B65D /* LaunchScreen.storyboard */,
 				FC8EE5E9230E512C00A8B65D /* Info.plist */,
+				FC8EE5EF230E63E100A8B65D /* Request.swift */,
+				FC8EE5F1230E6DB100A8B65D /* API.swift */,
 			);
 			path = GCDParctice;
 			sourceTree = "<group>";
@@ -136,6 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC8EE5E0230E512B00A8B65D /* ViewController.swift in Sources */,
+				FC8EE5F0230E63E100A8B65D /* Request.swift in Sources */,
+				FC8EE5F2230E6DB100A8B65D /* API.swift in Sources */,
 				FC8EE5DE230E512B00A8B65D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
